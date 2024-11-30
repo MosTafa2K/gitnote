@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "gitnote"
+version = "0.1.0"
+description = ""
+authors = ["mostafa2k <m2kappswindows8.1@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
