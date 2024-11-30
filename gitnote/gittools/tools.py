@@ -61,3 +61,23 @@ def parse_diff(diff):
         files[current_file] = files.get(current_file, []) + changes
 
     return files
+
+
+def style_changes(changes):
+    styled_lines = []
+    for line in changes:
+        if line.startswith("+"):
+            styled_lines.append(
+                f"[bold green]{line}[/bold green]"
+            )  # Positive changes (added lines)
+        elif line.startswith("-"):
+            styled_lines.append(
+                f"[bold red]{line}[/bold red]"
+            )  # Negative changes (deleted lines)
+        elif line.startswith("@@"):
+            styled_lines.append(f"[bold magenta]{line}[/bold magenta]")  # Hunk headers
+        else:
+            styled_lines.append(
+                f"[dim]{line}[/dim]"
+            )  # Other lines (metadata or context)
+    return "\n".join(styled_lines)
