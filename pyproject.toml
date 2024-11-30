@@ -7,6 +7,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+keyring = "^25.5.0"
+mypy = "^1.13.0"
+typer = "^0.14.0"
+huggingface-hub = "^0.26.3"
 
 
 [build-system]
