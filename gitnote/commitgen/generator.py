@@ -2,6 +2,7 @@ import time
 from importlib.resources import files
 from huggingface_hub import InferenceClient
 import gitnote.commitgen as commitgen_module
+from gitnote.config.settings import load_token
 
 
 prompt_path = files(commitgen_module).joinpath("prompt.txt")
@@ -13,7 +14,8 @@ with prompt_path.open("r", encoding="utf-8") as prompt:
         }
     ]
 
-client = InferenceClient()
+token = load_token()
+client = InferenceClient(api_key=token)
 
 
 def commit_generator(diff_output: str):
