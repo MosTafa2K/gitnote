@@ -3,6 +3,7 @@ from huggingface_hub.errors import (
     BadRequestError,
     LocalTokenNotFoundError,
 )
+from requests import HTTPError
 from requests.exceptions import ConnectionError, ConnectTimeout
 
 
@@ -14,6 +15,7 @@ def validate_token(token: str) -> bool:
     except (
         BadRequestError,
         LocalTokenNotFoundError,
+        HTTPError,
     ):
         print(
             "Token is required or provided token is invalid!\n\
