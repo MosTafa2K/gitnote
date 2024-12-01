@@ -15,7 +15,6 @@ def validate_token(token: str) -> bool:
     except (
         BadRequestError,
         LocalTokenNotFoundError,
-        HTTPError,
     ):
         print(
             "Token is required or provided token is invalid!\n\
@@ -23,6 +22,7 @@ Please provide a valid token using `gitnote setapikey <token>` command."
         )
         return False
     except (
+        HTTPError,
         ConnectionError,
         ConnectTimeout,
     ):
