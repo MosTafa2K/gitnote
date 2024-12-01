@@ -11,6 +11,12 @@ def init_config():
             yaml.dump({"hf": {"token": ""}}, f)
 
 
+def ensure_config_exists():
+    if Path(CONFIG_DIR).exists():
+        return True
+    return False
+
+
 def load_config():
     if Path(CONFIG_DIR).exists():
         with open(CONFIG_DIR, "r") as f:
@@ -28,5 +34,8 @@ def save_config(config):
 
 
 def load_token():
-    config = load_config()
-    return config["hf"]["token"]
+    if ensure_config_exists():
+        config = load_config()
+        return config["hf"]["token"]
+    else:
+        init_config()
