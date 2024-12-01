@@ -13,18 +13,17 @@ def validate_token(token: str) -> bool:
         api.whoami(token)
         return True
     except (
+        ConnectionError,
+        ConnectTimeout,
+    ):
+        print("Connection Error: Please check your internet connection and try again.")
+        return False
+    except (
+        HTTPError,
         BadRequestError,
         LocalTokenNotFoundError,
     ):
         print(
-            "Token is required or provided token is invalid!\n\
-Please provide a valid token using `gitnote set-token <token>` command."
+            "Invalid user token.\nPlease provide a valid token using command `gitnote set-token <token>`."
         )
-        return False
-    except (
-        HTTPError,
-        ConnectionError,
-        ConnectTimeout,
-    ):
-        print("Connection Error! Please check your internet connection and try again.")
         return False
