@@ -18,7 +18,7 @@ def validate_token(token: str) -> bool:
     ):
         print(
             "Token is required or provided token is invalid!\n\
-Please provide a valid token using `gitnote setapikey <token>` command."
+Please provide a valid token using `gitnote set-token <token>` command."
         )
         return False
     except (
