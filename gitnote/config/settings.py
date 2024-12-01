@@ -39,3 +39,9 @@ def load_token():
         return config["hf"]["token"]
     else:
         init_config()
+
+
+def save_token(token: str):
+    config = load_config()
+    config["hf"]["token"] = token
+    save_config(config)
