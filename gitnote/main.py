@@ -2,7 +2,7 @@ import time
 import typer
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.console import Console
-from gitnote.gittools.tools import get_git_diff
+from gitnote.gittools.tools import get_git_diff, display_diff
 from gitnote.commitgen.generator import commit_generator
 from gitnote.utils import validate_token
 from gitnote.config.settings import load_token
@@ -31,6 +31,11 @@ def generate():
                 "⚠️ No staged changes found! Please make sure you've staged your changes using 'git add' and try again.",
                 style="red",
             )
+
+
+@app.command(name="diff", help="Display staged changes")
+def diff():
+    display_diff()
 
 
 @app.callback()
