@@ -1,10 +1,11 @@
 import time
-import importlib.resources as pkg_resources
+from importlib.resources import files
 from huggingface_hub import InferenceClient
 import gitnote.commitgen as commitgen_module
 
 
-with pkg_resources.open_text(commitgen_module, "prompt.txt") as prompt:
+prompt_path = files(commitgen_module).joinpath("prompt.txt")
+with prompt_path.open("r", encoding="utf-8") as prompt:
     messages = [
         {
             "role": "system",
