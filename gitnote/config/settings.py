@@ -21,9 +21,7 @@ def load_config():
     if Path(CONFIG_DIR).exists():
         with open(CONFIG_DIR, "r") as f:
             return yaml.safe_load(f)
-    else:
-        init_config()
-        return {"hf": {"token": ""}}
+    init_config()
 
 
 def save_config(config):
