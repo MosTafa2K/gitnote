@@ -24,11 +24,12 @@ def load_config():
     init_config()
 
 
-def save_config(config):
+def save_config(config, show_message=True):
     with open(CONFIG_DIR, "w") as f:
         yaml.dump(config, f)
-    print("Config saved successfully!")
-    
+    if show_message:
+        print("Config saved successfully!")
+
 
 def load_token():
     if ensure_config_exists():
@@ -41,5 +42,5 @@ def load_token():
 def save_token(token: str):
     config = load_config()
     config["hf"]["token"] = token
-    save_config(config)
+    save_config(config, show_message=False)
     print("Token saved successfully!")
