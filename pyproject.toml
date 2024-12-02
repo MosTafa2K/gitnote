@@ -12,6 +12,7 @@ mypy = "^1.13.0"
 typer = "^0.14.0"
 huggingface-hub = "^0.26.3"
 pyyaml = "^6.0.2"
+pytest = "^8.3.4"
 
 
 [build-system]
