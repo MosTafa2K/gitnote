@@ -90,12 +90,9 @@ def display_diff():
     if diff:
         files = parse_diff(diff)
         for file, changes in files.items():
-            # Display the file name using a Rule for better separation between files
             console.print(Rule(f"[bold cyan]File: {file}[/bold cyan]"))
-            # Style the changes and render them within a Panel
             change_text = style_changes(changes)
             panel = Panel(change_text, border_style="dim", padding=(1, 2))
             console.print(panel)
     else:
-        # If no changes are found, show a warning message
         console.print("No changes to display.", style="yellow")
