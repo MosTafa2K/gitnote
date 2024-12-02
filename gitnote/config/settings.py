@@ -27,7 +27,8 @@ def load_config():
 def save_config(config):
     with open(CONFIG_DIR, "w") as f:
         yaml.dump(config, f)
-
+    print("Config saved successfully!")
+    
 
 def load_token():
     if ensure_config_exists():
@@ -41,3 +42,4 @@ def save_token(token: str):
     config = load_config()
     config["hf"]["token"] = token
     save_config(config)
+    print("Token saved successfully!")
