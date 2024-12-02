@@ -15,6 +15,12 @@ console = Console()
 
 @app.command(name="generate", help="Generate commit messages")
 def generate():
+    """
+    Generate commit messages based on the staged changes in the Git repository.
+
+    If no changes are found, a warning message is displayed.
+    """
+    pass
     token = load_token()
     if validate_token(token):
         diff = get_git_diff()
