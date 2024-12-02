@@ -32,7 +32,7 @@ pip install gitnote
 
 # Initial Setup ⚡
 
-Before using `gitnote`, take your token from [Hugging Face API token](https://huggingface.co/settings/tokens) and run the following command to set the token :
+Before using `gitnote`, take your token from [Hugging Face API token](https://huggingface.co/settings/tokens) **(Recommended first!)** and run the following command to set the token :
 
 
 ```bash
