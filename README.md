@@ -6,7 +6,7 @@
 &nbsp;
 
 # Overview 🔎
-`gitnote` is an intelligent CLI tool designed for automatically generating commit messages with the help of artificial intelligence. This tool analyzes the staged changes in your Git repository to assist you in creating more relevant and optimized commit messages, improving your Git workflow.
+`gitnote` is an intelligent CLI tool designed for automatically generating commit messages with the help of artificial intelligence. This tool analyzes the staged changes in your Git repository to assist you in writing more relevant and optimized commit messages, improving your Git workflow.
 
 
 
