@@ -1,8 +1,10 @@
-import yaml
+from ruamel.yaml import YAML
 from pathlib import Path
 
 
 CONFIG_DIR = Path(__file__).resolve().parent.parent.parent / "config.yaml"
+yaml = YAML()
+yaml.preserve_quotes = True
 
 
 def init_config():
@@ -20,7 +22,7 @@ def ensure_config_exists():
 def load_config():
     if Path(CONFIG_DIR).exists():
         with open(CONFIG_DIR, "r") as f:
-            return yaml.safe_load(f)
+            return yaml.load(f)
     init_config()
 
 
