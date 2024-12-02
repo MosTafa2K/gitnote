@@ -27,8 +27,6 @@ def load_config():
 
 
 def save_config(config):
-    import yaml
-
     with open(CONFIG_DIR, "w") as f:
         yaml.dump(config, f)
 
