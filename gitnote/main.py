@@ -36,6 +36,7 @@ def generate():
 
 @app.command(name="diff", help="Display staged changes")
 def diff():
+    """Display staged changes in a pretty way"""
     display_diff()
 
 
