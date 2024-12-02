@@ -56,7 +56,7 @@ def set_token(token: Annotated[str, typer.Argument()] = ""):
     if token:
         save_token(token)
     else:
-        token = typer.prompt("Enter Token: ", hide_input=True)
+        token = typer.prompt("Enter Token", hide_input=True)
         save_token(token)
 
 
