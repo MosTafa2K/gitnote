@@ -88,9 +88,6 @@ This project is built with the following key packages:
 
 &nbsp;
 
-# gitnote preview :
-[gitntoe_preview](assets/preview/gitnote_preview.mp4)
-
 # License 🧾
 
 This project is licensed under the [MIT License](./LICENSE).
