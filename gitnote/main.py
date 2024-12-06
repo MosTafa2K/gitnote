@@ -3,7 +3,7 @@ from typing import Annotated
 import typer
 from rich.progress import Progress, SpinnerColumn, TextColumn
 from rich.console import Console
-from gitnote.gittools.tools import get_git_diff, display_diff
+from gitnote.gittools.tools import get_git_diff, display_diff, ensure_git_repository
 from gitnote.commitgen.generator import commit_generator
 from gitnote.utils import validate_token
 from gitnote.config.settings import load_token, save_token
@@ -63,3 +63,4 @@ def set_token(token: Annotated[str, typer.Argument()] = ""):
 @app.callback()
 def main():
     """✨ Welcome to gitnote: The Commit Message Geneator ✨"""
+    ensure_git_repository()
