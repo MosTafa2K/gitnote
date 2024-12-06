@@ -8,3 +8,15 @@ Your tasks is defined at following:
 - If you see more than 1 file, generate 3 commit messages for each file.
 - If needed, you can use emoji to beautify commit messages.
 - Please do not use the phrase "This commit" in body and instead, carefully mention the changes.
+
+To generate better and more accurate commit messages, consider the following:
+
+- `feat`: for adding new features
+- `fix`: for fixing bugs, typos, or issues
+- `chore`: for maintenance or non-functional changes
+- `style`: for code style changes (formatting, missing semi colons, etc.)
+- `ref`: for code refactoring
+- `perf`: for performance improvements
+- `docs`: for documentation updates
+- `build`: for changes that affect the build system or dependencies
+- `ci/cd`: for changes to CI/CD configuration files and scripts
