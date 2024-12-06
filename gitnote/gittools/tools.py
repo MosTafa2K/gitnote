@@ -1,10 +1,22 @@
 import subprocess
+from pathlib import Path
 from rich.console import Console
 from rich.panel import Panel
 from rich.rule import Rule
 
 # Create a console object for rich output
 console = Console()
+
+
+def ensure_git_repository():
+    # Check if the current directory is a Git repository
+    git_path = Path(".git").resolve()
+    if not git_path.exists():
+        console.print(
+            "[bold red]Error:[/bold red] This command must be run inside a Git repository."
+        )
+        exit(1)
+    return True
 
 
 def get_git_diff():
