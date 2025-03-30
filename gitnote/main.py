@@ -20,7 +20,6 @@ def generate():
 
     If no changes are found, a warning message is displayed.
     """
-    pass
     token = load_token()
     if validate_token(token):
         diff = get_git_diff()
